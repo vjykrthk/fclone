@@ -1,0 +1,1 @@
+var fclone = angular.module('fclone',[]);
