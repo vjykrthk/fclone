@@ -5,6 +5,7 @@
     "angular-route": "latest",
     "angular-cookies": "latest",
     "ng-token-auth": "latest",
+    "underscore": "latest",
     "bootstrap-sass-official": "latest"
   }
 }

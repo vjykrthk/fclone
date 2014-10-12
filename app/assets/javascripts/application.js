@@ -17,5 +17,6 @@
 //= require angular-rails-templates
 //= require angular-cookies/angular-cookies
 //=	require ng-token-auth/dist/ng-token-auth
+//= require underscore/underscore
 //= require_tree ./templates
 //= require_tree .
