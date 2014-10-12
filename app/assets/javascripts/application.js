@@ -15,5 +15,7 @@
 //= require angular/angular
 //=	require angular-route/angular-route
 //= require angular-rails-templates
+//= require angular-cookies/angular-cookies
+//=	require ng-token-auth/dist/ng-token-auth
 //= require_tree ./templates
 //= require_tree .

@@ -3,6 +3,8 @@
   "dependencies": {
     "angular": "latest",
     "angular-route": "latest",
+    "angular-cookies": "latest",
+    "ng-token-auth": "latest",
     "bootstrap-sass-official": "latest"
   }
 }
