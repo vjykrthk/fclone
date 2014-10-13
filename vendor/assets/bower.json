@@ -6,6 +6,7 @@
     "angular-cookies": "latest",
     "ng-token-auth": "latest",
     "underscore": "latest",
+    "ng-form-data": "latest",
     "bootstrap-sass-official": "latest"
   }
 }

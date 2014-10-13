@@ -3,4 +3,5 @@ class UsersController < ApplicationController
 		users = User.where.not(id:params[:id])
 		render json: users
 	end
+	
 end

@@ -1,4 +1,4 @@
-var fclone = angular.module('fclone', ['templates', 'ngRoute', 'ng-token-auth']);
+var fclone = angular.module('fclone', ['templates', 'ngRoute', 'ng-token-auth', 'ng-form-data']);
 
 
 fclone.config(function($routeProvider, $locationProvider, $authProvider) {

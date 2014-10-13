@@ -35,6 +35,11 @@ GEM
     bcrypt (3.1.7)
     bower-rails (0.9.0)
     builder (3.2.2)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -81,6 +86,8 @@ GEM
       sqlite3-ruby
       thin
     mime-types (2.4.1)
+    mini_magick (3.8.1)
+      subexec (~> 0.2.1)
     minitest (5.4.2)
     multi_json (1.10.1)
     omniauth (1.2.2)
@@ -141,6 +148,7 @@ GEM
     sqlite3 (1.3.9)
     sqlite3-ruby (1.3.3)
       sqlite3 (>= 1.3.3)
+    subexec (0.2.3)
     thin (1.5.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -162,11 +170,13 @@ PLATFORMS
 DEPENDENCIES
   angular-rails-templates
   bower-rails
+  carrierwave
   coffee-rails (~> 4.0.0)
   devise_token_auth
   jbuilder (~> 2.0)
   jquery-rails
   mailcatcher
+  mini_magick
   omniauth
   rails (= 4.1.6)
   sass-rails (~> 4.0.3)

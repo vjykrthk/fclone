@@ -18,5 +18,6 @@
 //= require angular-cookies/angular-cookies
 //=	require ng-token-auth/dist/ng-token-auth
 //= require underscore/underscore
+//= require ng-form-data/ng-form-data
 //= require_tree ./templates
 //= require_tree .
