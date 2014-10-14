@@ -90,21 +90,28 @@ fclone.controller('registrationController',['$scope', '$auth', function($scope, 
 	}
 }]);
 
-fclone.controller('userProfileController',['$scope', '$routeParams', '$rootScope', '$location', function($scope, $routeParams, $rootScope, $location) {
+fclone.controller('userProfileController',['$scope', '$routeParams', '$rootScope', '$location', '$http', '$auth',
+	function($scope, $routeParams, $rootScope, $location, $http, $auth) {
 
-	if(!$rootScope.user.signedIn) {
-		$location.path('/');	
-	}
-	
-	console.log('userProfileController', $rootScope.user);
-	
-	$scope.$on('auth:validation-success', function(ev, user) {
-		console.log('auth:validation-success', $rootScope.user);
-		$rootScope.logged_in_user = user;
-		$scope.user_id = user.id;
-	});
+		if(!$rootScope.user.signedIn) {
+			$location.path('/');	
+		}
+
+		$http.get($auth.apiUrl() + '/friends').success(function(data) {
+			console.log(data);
+		});
 		
-}]);
+		console.log('userProfileController', $rootScope.user);
+
+
+		
+		$scope.$on('auth:validation-success', function(ev, user) {
+			console.log('auth:validation-success', $rootScope.user);
+			$rootScope.logged_in_user = user;
+			$scope.user_id = user.id;
+		});
+	}
+]);
 
 fclone.controller('findFriendsController',['$scope', '$http', '$rootScope', '$location', function($scope, $http, $rootScope, $location) {
 
