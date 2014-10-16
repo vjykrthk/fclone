@@ -1,0 +1,18 @@
+<div ng-controller="navbarController">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">          
+            <a class="navbar-brand" href="#">Fclone</a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >      
+            <ul ng-show="user.signedIn" class="nav navbar-nav navbar-right">
+              <li><a href="/find_friends">Find Friends</a></li>
+              <li><a href="#">change password</a></li>
+              <li><a href="#">sign out</a></li>            
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>      
+</div>

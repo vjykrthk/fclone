@@ -1,0 +1,19 @@
+<div ng-include="'partials/navbar.html'"></div>
+<div class="container">
+    <section  class="col-md-10">
+        <div class="row" style="margin-top:2em">
+            <h4>Users</h4>                        
+            <div class="col-md-2" ng-repeat="user_profile in user_profiles" style="margin-top:2em">
+                <img class="img-thumbnail post-image" 
+                    ng-src="{{user_profile.image.thumb.url}}" />  
+                
+                 <div class="caption">
+                    <h4>{{user_profile.profile_name}}</h4>                                                        
+                 </div>
+                 <form ng-submit="send_request(user_profile)">
+                    <button type="submit" class="btn btn-primary">Send request</button>                     
+                 </form>
+            </div>                      
+        </div>  
+    </section>    
+</div>

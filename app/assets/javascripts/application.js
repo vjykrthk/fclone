@@ -1,3 +1,4 @@
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -17,7 +18,9 @@
 //= require angular-rails-templates
 //= require angular-cookies/angular-cookies
 //=	require ng-token-auth/dist/ng-token-auth
-//= require underscore/underscore
 //= require ng-form-data/ng-form-data
-//= require_tree ./templates
+//= require angular-bootstrap/ui-bootstrap-tpls
+//= require lodash/dist/lodash
 //= require_tree .
+//= require_tree ../templates
+

@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141014102059) do
+ActiveRecord::Schema.define(version: 20141015105755) do
 
   create_table "friendships", force: true do |t|
     t.integer  "first_friend_id"
-    t.string   "second_friend_id"
+    t.integer  "second_friend_id", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "accepted",         default: false
+    t.boolean  "accepted",                     default: false
   end
 
   create_table "posts", force: true do |t|

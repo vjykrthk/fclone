@@ -4,24 +4,22 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'home#index'
+    root 'home#index'
 
 
-   resources :users, only: :index do
-    member do
-      get 'friends', 'requests'
-    end
-   end  
-   resources :friendship_requests, only: [:create, :destroy]
-   resources :friendships, only: [:create, :destroy]
+    # resources :users, only: :index, defaults: {format: :json} do
+    #   member do
+    #     get 'friends', 'requests'
+    #   end
+    # end  
 
-  
-   # get '/list_of_users/:id', to: 'users#list_of_users'
-   # get "/friends" => "users#friends"
-   # get "/requests" => "users#requests"
- 
+    resources :posts, only: [:create, :index], defaults: {format: :json}
    
-   get '*path', to: 'home#index'
+    resources :friendships, only: [:create, :update]
+
+    match '/:id/posts',  to: 'posts#index', via: 'get', defaults: {format: :json}
+
+    get '*path', to: 'home#index'
 
 
   # Example of regular route:

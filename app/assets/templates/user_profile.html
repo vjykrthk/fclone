@@ -1,0 +1,71 @@
+<div ng-include="'partials/navbar.html'"></div>
+<div class="container">
+		<section class="row">
+			<div class="col-md-10 col-offset-1">
+				<div class="col-md-2" class="thumbnail">
+					<img class="img-thumbnail" 
+					src="{{user.image.thumb.url}}" />
+					 <div class="caption"> 
+						<h4>{{user.profile_name}}</h4>
+					 </div>
+				</div>
+				<div class="col-md-5">
+					<form ng-submit="sendPost()">
+						<div class="form-group">
+							<textarea class="form-control" name="textarea" rows="5" cols="100" ng-model="post_content">						
+							</textarea>
+						</div>
+						<button type="submit"class="btn btn-primary">Post</button>					
+					</form>					
+				</div>				
+			</div>
+		</section>
+		<section class="col-md-10 col-offset-1">
+			<tabset>
+			    <tab heading="Posts">
+					<div class="row" ng-repeat="post in posts">	
+						<div style="margin-top:2em">
+							<div class="col-md-2" class="thumbnail">
+								<img class="img-thumbnail post-image" 
+								src="{{post.user.image.thumb.url}}" />
+								 <div class="caption"> 
+									<h4>{{ post.user.profile_name}}</h4>
+								 </div>
+							</div>
+							<div class="col-md-7">
+								{{ post.content }}  
+							</div>	
+						</div>			
+					</div>
+			    </tab>
+			    <tab heading="Friends">
+			    	<div class="row" style="margin-top:1em">
+			    		<h4>Friend requests</h4>						
+						<div class="col-md-2" ng-repeat="friend_request in friend_requests">
+							<img class="img-thumbnail post-image" 
+							ng-src="{{friend_request.image.thumb.url}}" />
+							<div class="caption">
+								<h4>{{friend_request.profile_name}}</h4>												
+							</div>
+							<form ng-submit="accept_request(friend_request)">
+								<button type='submit' class="btn btn-primary">Accept</button>
+							</form>
+						</div>						
+					</div>
+					<hr>
+					<div class="row" style="margin-top:1em">
+						<h4>Friends</h4>						
+						<div class="col-md-2" ng-repeat="friend in friends">
+							<img class="img-thumbnail post-image" 
+								ng-src="{{friend.image.thumb.url}}" />							
+							 <div class="caption">							 	
+								<h4>{{friend.profile_name}}</h4>														
+							 </div>
+						</div>						
+					</div>
+			    </tab>							    
+			</tabset>			
+		</section>
+	</div> 
+
+	
