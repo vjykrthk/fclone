@@ -7,11 +7,11 @@ Rails.application.routes.draw do
     root 'home#index'
 
 
-    # resources :users, only: :index, defaults: {format: :json} do
-    #   member do
-    #     get 'friends', 'requests'
-    #   end
-    # end  
+    resources :users, only: :index, defaults: {format: :json} do
+      member do
+        get 'friends', 'requests'
+      end
+    end  
 
     resources :posts, only: [:create, :index], defaults: {format: :json}
    

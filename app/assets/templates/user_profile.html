@@ -4,7 +4,7 @@
 			<div class="col-md-10 col-offset-1">
 				<div class="col-md-2" class="thumbnail">
 					<img class="img-thumbnail" 
-					src="{{user.image.thumb.url}}" />
+					src="{{user.image.small.url}}" />
 					 <div class="caption"> 
 						<h4>{{user.profile_name}}</h4>
 					 </div>
@@ -24,8 +24,8 @@
 			<tabset>
 			    <tab heading="Posts">
 					<div class="row" ng-repeat="post in posts">	
-						<div style="margin-top:2em">
-							<div class="col-md-2" class="thumbnail">
+						<div class="posts">
+							<div class="col-md-1" class="thumbnail">
 								<img class="img-thumbnail post-image" 
 								src="{{post.user.image.thumb.url}}" />
 								 <div class="caption"> 
@@ -39,7 +39,7 @@
 					</div>
 			    </tab>
 			    <tab heading="Friends">
-			    	<div class="row" style="margin-top:1em">
+			    	<div class="row friends_requests" ng-if="friends_requests">
 			    		<h4>Friend requests</h4>						
 						<div class="col-md-2" ng-repeat="friend_request in friend_requests">
 							<img class="img-thumbnail post-image" 
@@ -51,9 +51,9 @@
 								<button type='submit' class="btn btn-primary">Accept</button>
 							</form>
 						</div>						
-					</div>
 					<hr>
-					<div class="row" style="margin-top:1em">
+					</div>					
+					<div class="row friends" ng-if="friends">
 						<h4>Friends</h4>						
 						<div class="col-md-2" ng-repeat="friend in friends">
 							<img class="img-thumbnail post-image" 
