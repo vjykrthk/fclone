@@ -9,7 +9,7 @@
 						<h4>{{user.profile_name}}</h4>
 					 </div>
 				</div>
-				<div class="col-md-5">
+				<div class="col-md-5" ng-controller="sendPostController">
 					<form ng-submit="sendPost()">
 						<div class="form-group">
 							<textarea class="form-control" name="textarea" rows="5" cols="100" ng-model="post_content">						
@@ -23,45 +23,53 @@
 		<section class="col-md-10 col-offset-1">
 			<tabset>
 			    <tab heading="Posts">
-					<div class="row" ng-repeat="post in posts">	
-						<div class="posts">
-							<div class="col-md-1" class="thumbnail">
-								<img class="img-thumbnail post-image" 
-								src="{{post.user.image.thumb.url}}" />
-								 <div class="caption"> 
-									<h4>{{ post.user.profile_name}}</h4>
-								 </div>
-							</div>
-							<div class="col-md-7">
-								{{ post.content }}  
-							</div>	
-						</div>			
-					</div>
+			    	<div ng-controller="getPostsController">
+			    		<div class="row" ng-repeat="post in posts">	
+							<div class="posts">
+								<div class="col-md-1" class="thumbnail">
+									<img class="img-thumbnail post-image" 
+									src="{{post.user.image.thumb.url}}" />
+									 <div class="caption"> 
+										<h4>{{ post.user.profile_name}}</h4>
+									 </div>
+								</div>
+								<div class="col-md-7">
+									{{ post.content }}  
+								</div>	
+							</div>			
+						</div>	
+			    	</div>
+
 			    </tab>
 			    <tab heading="Friends">
-			    	<div class="row friends_requests" ng-if="friends_requests">
-			    		<h4>Friend requests</h4>						
-						<div class="col-md-2" ng-repeat="friend_request in friend_requests">
-							<img class="img-thumbnail post-image" 
-							ng-src="{{friend_request.image.thumb.url}}" />
-							<div class="caption">
-								<h4>{{friend_request.profile_name}}</h4>												
-							</div>
-							<form ng-submit="accept_request(friend_request)">
-								<button type='submit' class="btn btn-primary">Accept</button>
-							</form>
-						</div>						
+			    	<div ng-controller="friendRequestsController">			    		
+				    	<div class="row friends_requests">
+				    		<h4>Friend requests</h4>						
+							<div class="col-md-2" ng-repeat="friend_request in friend_requests">
+								<img class="img-thumbnail post-image" 
+								ng-src="{{friend_request.image.thumb.url}}" />
+								<div class="caption">
+									<h4>{{friend_request.profile_name}}</h4>											
+								</div>
+								<form ng-submit="accept_request(friend_request)">
+									<button type='submit' class="btn btn-primary">Accept</button>
+								</form>
+							</div>						
+							
+						</div>
+					</div>
 					<hr>
-					</div>					
-					<div class="row friends" ng-if="friends">
-						<h4>Friends</h4>						
-						<div class="col-md-2" ng-repeat="friend in friends">
-							<img class="img-thumbnail post-image" 
-								ng-src="{{friend.image.thumb.url}}" />							
-							 <div class="caption">							 	
-								<h4>{{friend.profile_name}}</h4>														
-							 </div>
-						</div>						
+					<div ng-controller="friendsController">					
+						<div class="row friends" ng-if="friends">
+							<h4>Friends</h4>						
+							<div class="col-md-2" ng-repeat="friend in friends">
+								<img class="img-thumbnail post-image" 
+									ng-src="{{friend.image.thumb.url}}" />							
+								 <div class="caption">							 	
+									<h4>{{friend.profile_name}}</h4>														
+								 </div>
+							</div>						
+						</div>
 					</div>
 			    </tab>							    
 			</tabset>			
