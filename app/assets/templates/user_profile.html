@@ -43,7 +43,7 @@
 			    </tab>
 			    <tab heading="Friends">
 			    	<div ng-controller="friendRequestsController">			    		
-				    	<div class="row friends_requests">
+				    	<div class="row friends_requests" ng-show="friend_requests.length > 0">
 				    		<h4>Friend requests</h4>						
 							<div class="col-md-2" ng-repeat="friend_request in friend_requests">
 								<img class="img-thumbnail post-image" 
@@ -58,9 +58,9 @@
 							
 						</div>
 					</div>
-					<hr>
+					<hr ng-show="friend_requests.length > 0 && friends.length > 0">
 					<div ng-controller="friendsController">					
-						<div class="row friends" ng-if="friends">
+						<div class="row friends" ng-show="friends.length > 0">
 							<h4>Friends</h4>						
 							<div class="col-md-2" ng-repeat="friend in friends">
 								<img class="img-thumbnail post-image" 

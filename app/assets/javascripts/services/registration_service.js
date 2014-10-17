@@ -4,9 +4,20 @@ fclone.service('fcloneRegistrationService', ['$auth',
 		var registrationService = {};
 
 		registrationService.register = function(user) {
-			return $auth.submitRegistration(user);	
+
+			return $auth.submitRegistration(user)
+					.then(handleRegistrationSuccess)
+					.catch(handleRegistrationFailure);	
 		}
 
-		return registrationService;	
+		return registrationService;
+
+		function handleRegistrationSuccess(res) {
+			console.log("handleRegistrationSuccess ", res);
+		}
+
+		function handleRegistrationFailure(res) {
+			console.log("handleRegistrationFailure ", res);
+		}
 	}
 ]);
